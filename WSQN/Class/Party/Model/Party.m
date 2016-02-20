@@ -15,26 +15,4 @@
 {
     return @{@"actor" : [Actor class]};
 }
-//+ (instancetype)partyWithDict:(NSDictionary *)dict
-//{
-//    return [[self alloc] initWithDict:dict];
-//}
-//
-//- (instancetype)initWithDict:(NSDictionary *)dict
-//{
-//    if (self = [super init]) {
-//        
-//        [self setValuesForKeysWithDictionary:dict];
-//        
-//        NSMutableArray *actorArray = [NSMutableArray array];
-//        
-//        for (NSDictionary *dict in self.actor) {
-//            
-//            Actor *actor = [Actor actorWithDict:dict];
-//            [actorArray addObject:actor];
-//        }
-//        self.actor = actorArray;
-//    }
-//    return self;
-//}
 @end

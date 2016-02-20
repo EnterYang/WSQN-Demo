@@ -15,6 +15,4 @@
 @property (nonatomic, copy) NSString *img;
 @property (nonatomic, copy) NSString *huodong_id;
 
-//+ (instancetype)partyWithDict:(NSDictionary *)dict;
-//- (instancetype)initWithDict:(NSDictionary *)dict;
 @end

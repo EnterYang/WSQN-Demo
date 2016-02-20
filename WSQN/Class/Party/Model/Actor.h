@@ -12,7 +12,5 @@
 
 @property (nonatomic, assign) int user_id;
 @property (nonatomic, copy) NSString *avatar;
-//
-//+ (instancetype)actorWithDict:(NSDictionary *)dict;
-//- (instancetype)initWithDict:(NSDictionary *)dict;
+
 @end
