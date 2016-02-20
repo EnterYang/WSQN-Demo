@@ -80,9 +80,10 @@
     
     PartyTableViewCell *cell = [PartyTableViewCell cellWithTableView:tableView];
     
+    // 2.传递frame模型
+
     cell.party = self.partys[indexPath.row];
     
-    // 2.传递frame模型
     
     return cell;
 }
