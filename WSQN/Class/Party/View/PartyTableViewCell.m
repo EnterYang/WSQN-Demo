@@ -68,7 +68,7 @@
     [actorBtn sd_setBackgroundImageWithURL:[NSURL URLWithString:actor.avatar] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"人-占位图"]];
     
     
-    NSLog(@"%d %@ %@",actor.user_id,actor.avatar,NSStringFromCGRect(actorBtn.frame));
+    NSLog(@"%ld %@ %@",actor.user_id,actor.avatar,NSStringFromCGRect(actorBtn.frame));
 }
 
 - (void)setParty:(Party *)party{

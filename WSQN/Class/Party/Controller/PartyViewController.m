@@ -17,7 +17,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *partyTableView;
 @property (strong,nonatomic) NSMutableArray *partys;
 @property (strong, nonatomic) NSMutableArray *loadedIndex;
-
 @end
 
 @implementation PartyViewController
@@ -39,7 +38,6 @@
     }
     return _partys;
 }
-
 
 - (void)loadData {
     
@@ -63,9 +61,6 @@
     } failure:^(NSError *error) {
         NSLog(@"erro %@",error);
     }];
-    
-        
-        
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
