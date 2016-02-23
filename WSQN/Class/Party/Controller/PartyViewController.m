@@ -43,12 +43,12 @@
     
     PartyParam *param = [PartyParam param];
     
-    param.city_id = @52;
-    param.lat = @0;
-    param.lng = @0;
-    param.page = @0;
+    param.city_id = 52;
+    param.lat = 0;
+    param.lng = 0;
+    param.page = 0;
     param.regionname = nil;
-    param.user_id = @2159;
+    param.user_id = 2159;
     
     [YQX_GetDataTool homeStatusesWithParam:param success:^(PartyResult *result) {
         
