@@ -51,7 +51,7 @@
     [self.backgroundImageView sd_setImageWithURL:[NSURL URLWithString:self.party.img]];
     self.h1Label.text = self.party.h1;
     self.h2Label.text = self.party.h2;
-    int padding1 = 10;
+    CGFloat padding1 = 10;
 
     for (int i = 0; i<self.party.actor.count; i++) {
         
