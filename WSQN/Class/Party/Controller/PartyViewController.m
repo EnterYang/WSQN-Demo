@@ -16,16 +16,15 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *partyTableView;
 @property (strong,nonatomic) NSMutableArray *partys;
+@property (strong, nonatomic) NSMutableArray *loadedIndex;
+
 @end
 
-@implementation PartyViewController{
-
-    NSMutableArray *lodedIndex;
-}
+@implementation PartyViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    lodedIndex = [NSMutableArray mutableCopy];
+    self.loadedIndex = [NSMutableArray mutableCopy];
     [self loadData];
 }
 
@@ -42,7 +41,7 @@
 }
 
 
-- (void)loadData{
+- (void)loadData {
     
     PartyParam *param = [PartyParam param];
     
@@ -87,7 +86,7 @@
     
     return cell;
 }
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     return 175;
 }
