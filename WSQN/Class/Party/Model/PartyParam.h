@@ -16,14 +16,15 @@
  */
 #import <Foundation/Foundation.h>
 #import "YQX_BaseParam.h"
+#import <CoreLocation/CoreLocation.h>
 
 @interface PartyParam : YQX_BaseParam
 
-@property (nonatomic, strong) NSNumber *city_id;
-@property (nonatomic, strong) NSNumber *lat;
-@property (nonatomic, strong) NSNumber *lng;
-@property (nonatomic, strong) NSNumber *page;
-@property (nonatomic, strong) NSNumber *regionname;
-@property (nonatomic, strong) NSNumber *user_id;
+@property (nonatomic, assign) NSInteger city_id;
+@property (nonatomic, assign) CLLocationDegrees *lat;
+@property (nonatomic, assign) CLLocationDegrees *lng;
+@property (nonatomic, assign) NSInteger page;
+@property (nonatomic, strong) NSString *regionname;
+@property (nonatomic, assign) NSInteger user_id;
 
 @end

@@ -44,6 +44,33 @@
     // Configure the view for the selected state
 }
 
+- (void)addActorButtonWithActor:(Actor *)actor index:(NSInteger)index {
+    CGFloat padding1 = 10;
+    UIButton *actorBtn = [[UIButton alloc]init];
+    
+    [self.actorsView addSubview:actorBtn];
+    
+    [actorBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.centerY.mas_equalTo(self.actorsView.mas_centerY);
+        
+        make.left.equalTo(self.actorsView.mas_left).with.offset(padding1+index*55);
+        
+        //make.top.equalTo(self.actorsView.mas_top).with.offset(padding1);
+        make.size.mas_equalTo(CGSizeMake(45, 45));
+    }];
+    [actorBtn setBackgroundColor:[UIColor whiteColor]];
+    [actorBtn.layer setMasksToBounds:YES];
+    [actorBtn.layer setCornerRadius:23];
+    [actorBtn.layer setBorderWidth:1.0];
+    [actorBtn.layer setBorderColor:[UIColor whiteColor].CGColor];
+    
+    [actorBtn sd_setBackgroundImageWithURL:[NSURL URLWithString:actor.avatar] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"人-占位图"]];
+    
+    
+    NSLog(@"%ld %@ %@",actor.user_id,actor.avatar,NSStringFromCGRect(actorBtn.frame));
+}
+
 - (void)setParty:(Party *)party{
     
     _party = party;
@@ -51,34 +78,10 @@
     [self.backgroundImageView sd_setImageWithURL:[NSURL URLWithString:self.party.img]];
     self.h1Label.text = self.party.h1;
     self.h2Label.text = self.party.h2;
-    int padding1 = 10;
 
-    for (int i = 0; i<self.party.actor.count; i++) {
-        
-        UIButton *actorBtn = [[UIButton alloc]init];
-        
-        [self.actorsView addSubview:actorBtn];
-
-        [actorBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-
-            make.centerY.mas_equalTo(self.actorsView.mas_centerY);
-            
-            make.left.equalTo(self.actorsView.mas_left).with.offset(padding1+i*55);
-            
-            //make.top.equalTo(self.actorsView.mas_top).with.offset(padding1);
-            make.size.mas_equalTo(CGSizeMake(45, 45));
-        }];
-        [actorBtn setBackgroundColor:[UIColor whiteColor]];
-        [actorBtn.layer setMasksToBounds:YES];
-        [actorBtn.layer setCornerRadius:23];
-        [actorBtn.layer setBorderWidth:1.0];
-        [actorBtn.layer setBorderColor:[UIColor whiteColor].CGColor];
+    for (NSInteger i = 0; i<self.party.actor.count; i++) {
         Actor *actor = self.party.actor[i];
-        [actorBtn sd_setBackgroundImageWithURL:[NSURL URLWithString:actor.avatar] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"人-占位图"]];
-        
-        
-        NSLog(@"%d %@ %@",actor.user_id,actor.avatar,NSStringFromCGRect(actorBtn.frame));
-
+        [self addActorButtonWithActor:actor index:i];
     }
     
 //    for (Actor *actor in self.party.actor) {

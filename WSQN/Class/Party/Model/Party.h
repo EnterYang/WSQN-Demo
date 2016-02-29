@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface Party : NSObject
+
 @property (nonatomic, strong) NSArray *actor;
 @property (nonatomic, copy) NSString *h1;
 @property (nonatomic, copy) NSString *h2;

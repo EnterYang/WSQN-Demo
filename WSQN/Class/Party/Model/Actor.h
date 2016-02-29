@@ -10,7 +10,7 @@
 
 @interface Actor : NSObject
 
-@property (nonatomic, assign) int user_id;
+@property (nonatomic, assign) NSInteger user_id;
 @property (nonatomic, copy) NSString *avatar;
 
 @end

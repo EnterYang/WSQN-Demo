@@ -16,16 +16,14 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *partyTableView;
 @property (strong,nonatomic) NSMutableArray *partys;
+@property (strong, nonatomic) NSMutableArray *loadedIndex;
 @end
 
-@implementation PartyViewController{
-
-    NSMutableArray *lodedIndex;
-}
+@implementation PartyViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    lodedIndex = [NSMutableArray mutableCopy];
+    self.loadedIndex = [NSMutableArray mutableCopy];
     [self loadData];
 }
 
@@ -41,17 +39,16 @@
     return _partys;
 }
 
-
-- (void)loadData{
+- (void)loadData {
     
     PartyParam *param = [PartyParam param];
     
-    param.city_id = @52;
-    param.lat = @0;
-    param.lng = @0;
-    param.page = @0;
+    param.city_id = 52;
+    param.lat = 0;
+    param.lng = 0;
+    param.page = 0;
     param.regionname = nil;
-    param.user_id = @2159;
+    param.user_id = 2159;
     
     [YQX_GetDataTool homeStatusesWithParam:param success:^(PartyResult *result) {
         
@@ -64,9 +61,6 @@
     } failure:^(NSError *error) {
         NSLog(@"erro %@",error);
     }];
-    
-        
-        
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -87,7 +81,7 @@
     
     return cell;
 }
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     return 175;
 }
